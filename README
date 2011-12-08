@@ -8,6 +8,13 @@ Setup:
 -Make sure you have maven on your system (above 3.0)
 -clone this project: git clone git@github.com:madsenevoldsen/Angry-today.git
 -cd Angry-today
--mvn clean install
+-mvn clean install -Dmaven.test.skip=true
 -mvn jetty:run
 -goto http://localhost:8080/angrytoday/
+  
+You should see a welcome message.
+
+
+(Optional)
+If you want look at the Forest source, you can clone is by typing:
+git clone git@github.com:jayway/forest.git
