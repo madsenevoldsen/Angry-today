@@ -53,7 +53,7 @@ public class AngryTodayTest extends AbstractRunner {
         String comment = "My comment";
         given().body("\"" + comment + "\"").
         expect().statusCode(200).
-        when().put(location + "comment");
+        when().post(location + "comment");
 
 
         expect().
@@ -70,7 +70,7 @@ public class AngryTodayTest extends AbstractRunner {
         String tag = "tag";
         given().body( "\"" + tag + "\"").
         expect().statusCode( 200 ).
-        when().put(location + "tag");
+        when().post(location + "tag");
 
 
         expect().
@@ -88,14 +88,14 @@ public class AngryTodayTest extends AbstractRunner {
         String tag = "tag";
         given().body( "\"" + tag + "\"").
         expect().statusCode( 200 ).
-        when().put(location + "tag");
+        when().post(location + "tag");
 
         expect().body("tags[0]", equalTo( tag ) ).
         when().get( location + "description");
 
         given().body( "\"" + tag + "\"").
         expect().statusCode(200).
-        when().put( location + "untag" );
+        when().post( location + "untag" );
 
         expect().body("tags.size()", equalTo( 0 ) ).
         when().get( location + "description");
