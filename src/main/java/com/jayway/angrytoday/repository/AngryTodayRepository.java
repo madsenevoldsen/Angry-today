@@ -10,12 +10,12 @@ public class AngryTodayRepository {
     public static AngryTodayRepository INSTANCE = new AngryTodayRepository();
 
     private AngryTodayRepository() {
-        posts = new ArrayList<AngryPost>();
+        posts = new LinkedList<AngryPost>();
         created = new HashMap<AngryPost, Date>();
         initializeTestData();
     }
 
-    private List<AngryPost> posts;
+    private LinkedList<AngryPost> posts;
     private Map<AngryPost, Date> created;
 
     public void clear() {
@@ -46,7 +46,7 @@ public class AngryTodayRepository {
     }
 
     public void add( AngryPost post ) {
-        posts.add(post);
+        posts.addFirst(post);
         created.put( post, new Date() );
     }
 
